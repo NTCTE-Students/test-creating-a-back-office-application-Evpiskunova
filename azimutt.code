@@ -1,0 +1,44 @@
+Client
+  id uuid pk
+  surname varchar(30)
+  name varchar(30)
+  password varchar(50)
+
+Orders
+  id uuid pk
+  client_id fk Client.id
+  cost varchar(30)
+  product fk Product.id
+  employee fk Employee.id
+
+Product
+  id uuid pk
+  goods_id fk Goods.id
+  services_id fk Services.id
+
+
+Goods
+  id uuid pk
+  goods_name varchar(200)
+  goods_cost varchar(200)
+  Quantity_in_stock varchar(200)
+  Description varchar(200)
+
+Services
+  id uuid pk 
+  sevices_name varchar(200)
+  services_cost varchar(200)
+  Description varchar(200)
+  employee_name fk Employee.name
+
+
+Finance
+  id uuid pk
+  Total_money varchar(200)
+  Money_from_the_order fk Orders.cost
+
+ Employee
+  id uuid pk
+  name varchar(50)
+  surname varchar(50)
+  name_work varchar(50)
